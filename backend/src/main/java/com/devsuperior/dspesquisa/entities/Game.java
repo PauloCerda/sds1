@@ -26,7 +26,7 @@ public class Game implements Serializable {
 	private String title;
 	private Platform platform;
 	
-	@ManyToOne
+		@ManyToOne
 	@JoinColumn(name = "genre_id")
 	private Genre genre;
 	
