@@ -5,6 +5,7 @@ import { formatDate } from './helpers';
 import Pagination from './Pagination';
 import './styles.css';
 import { RecordsResponse } from './types';
+import Filters from '../../components/Filters';
 
 const BASE_URL = 'http://localhost:8080'
 
@@ -23,13 +24,7 @@ const Records = () => {
 
     return (
         <div className="page-container">
-            <div className="filters-container records-actions">
-                <Link to="/charts">
-                    <button className="action-filters">
-                        VER GRÁFIOCOS
-                    </button>
-                </Link>
-            </div>
+            <Filters link="/charts" linkText="VER GRÁFICO" />
             <table className="records-table" cellPadding="0" cellSpacing="0">
                 <thead>
                     <tr>
@@ -51,7 +46,7 @@ const Records = () => {
                         <td>{record.genreName}</td>
                         <td className="text-primary">{record.gameTitle}</td>
                       </tr>
-                    ))}                    
+                    ))}
                 </tbody>
             </table>
             <Pagination
